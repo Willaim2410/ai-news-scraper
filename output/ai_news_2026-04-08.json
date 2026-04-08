@@ -1,27 +1,5 @@
 [
   {
-    "id": "https://huggingface.co/blog/ibm-research/altk-evolve",
-    "title": "ALTK‑Evolve: On‑the‑Job Learning for AI Agents",
-    "url": "https://huggingface.co/blog/ibm-research/altk-evolve",
-    "source": "Hugging Face",
-    "type": "rss",
-    "published_utc": "2026-04-08T14:27:42+00:00",
-    "summary": "",
-    "engagement": null,
-    "score": 50
-  },
-  {
-    "id": "https://www.marktechpost.com/2026/04/08/z-ai-introduces-glm-5-1-an-open-weight-754b-agentic-model-that-achieves-sota-on-swe-bench-pro-and-sustains-8-hour-autonomous-execution/",
-    "title": "Z.AI Introduces GLM-5.1: An Open-Weight 754B Agentic Model That Achieves SOTA on SWE-Bench Pro and Sustains 8-Hour Autonomous Execution",
-    "url": "https://www.marktechpost.com/2026/04/08/z-ai-introduces-glm-5-1-an-open-weight-754b-agentic-model-that-achieves-sota-on-swe-bench-pro-and-sustains-8-hour-autonomous-execution/",
-    "source": "MarkTechPost",
-    "type": "rss",
-    "published_utc": "2026-04-08T08:19:10+00:00",
-    "summary": "<p>Z.AI, the AI platform developed by the team behind the GLM model family, has released GLM-5.1 — its next-generation flagship model developed specifically for agentic engineering. Unlike models optimized for clean, single-turn benchmarks, GLM-5.1 is built for agentic tasks, with significantly stronger coding capabilities than its predecessor, and achieves state-of-the-art performance on SWE-Bench Pro while [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/04/08/z-ai-introduc",
-    "engagement": null,
-    "score": 45
-  },
-  {
     "id": "https://openai.com/index/introducing-child-safety-blueprint",
     "title": "Introducing the Child Safety Blueprint",
     "url": "https://openai.com/index/introducing-child-safety-blueprint",
@@ -33,13 +11,13 @@
     "score": 40
   },
   {
-    "id": "https://www.technologyreview.com/2026/04/08/1135398/mustafa-suleyman-ai-future/",
-    "title": "Mustafa Suleyman: AI development won’t hit a wall anytime soon—here’s why",
-    "url": "https://www.technologyreview.com/2026/04/08/1135398/mustafa-suleyman-ai-future/",
-    "source": "MIT Tech Review",
+    "id": "https://huggingface.co/blog/ibm-research/altk-evolve",
+    "title": "ALTK‑Evolve: On‑the‑Job Learning for AI Agents",
+    "url": "https://huggingface.co/blog/ibm-research/altk-evolve",
+    "source": "Hugging Face",
     "type": "rss",
-    "published_utc": "2026-04-08T14:00:00+00:00",
-    "summary": "We evolved for a linear world. If you walk for an hour, you cover a certain distance. Walk for two hours and you cover double that distance. This intuition served us well on the savannah. But it catastrophically fails when confronting AI and the core exponential trends at its heart. From the time I began&#8230;",
+    "published_utc": "2026-04-08T14:27:42+00:00",
+    "summary": "",
     "engagement": null,
     "score": 40
   },
@@ -99,13 +77,13 @@
     "score": 30
   },
   {
-    "id": "https://www.marktechpost.com/2026/04/07/how-to-combine-google-search-google-maps-and-custom-functions-in-a-single-gemini-api-call-with-context-circulation-parallel-tool-ids-and-multi-step-agentic-chains/",
-    "title": "How to Combine Google Search, Google Maps, and Custom Functions in a Single Gemini API Call With Context Circulation, Parallel Tool IDs, and Multi-Step Agentic Chains",
-    "url": "https://www.marktechpost.com/2026/04/07/how-to-combine-google-search-google-maps-and-custom-functions-in-a-single-gemini-api-call-with-context-circulation-parallel-tool-ids-and-multi-step-agentic-chains/",
-    "source": "MarkTechPost",
+    "id": "https://www.technologyreview.com/2026/04/08/1135398/mustafa-suleyman-ai-future/",
+    "title": "Mustafa Suleyman: AI development won’t hit a wall anytime soon—here’s why",
+    "url": "https://www.technologyreview.com/2026/04/08/1135398/mustafa-suleyman-ai-future/",
+    "source": "MIT Tech Review",
     "type": "rss",
-    "published_utc": "2026-04-08T01:56:34+00:00",
-    "summary": "<p>In this tutorial, we explore the latest Gemini API tooling updates Google announced in March 2026, specifically the ability to combine built-in tools like Google Search and Google Maps with custom function calls in a single API request. We walk through five hands-on demos that progressively build on each other, starting with the core tool [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/04/07/how-to-combine-google-search-google-maps-and-custom-functions-in-a-single-gemini-",
+    "published_utc": "2026-04-08T14:00:00+00:00",
+    "summary": "We evolved for a linear world. If you walk for an hour, you cover a certain distance. Walk for two hours and you cover double that distance. This intuition served us well on the savannah. But it catastrophically fails when confronting AI and the core exponential trends at its heart. From the time I began&#8230;",
     "engagement": null,
     "score": 30
   },
@@ -141,17 +119,6 @@
     "summary": "arXiv:2604.05051v1 Announce Type: new \nAbstract: Patients are increasingly turning to large language models (LLMs) with medical questions that are complex and difficult to articulate clearly. However, LLMs are sensitive to prompt phrasings and can be influenced by the way questions are worded. Ideally, LLMs should respond consistently regardless of phrasing, particularly when grounded in the same underlying evidence. We investigate this through a systematic evaluation in a controlled retrieval-a",
     "engagement": null,
     "score": 27
-  },
-  {
-    "id": "https://www.marktechpost.com/2026/04/07/how-to-deploy-open-webui-with-secure-openai-api-integration-public-tunneling-and-browser-based-chat-access/",
-    "title": "How to Deploy Open WebUI with Secure OpenAI API Integration, Public Tunneling, and Browser-Based Chat Access",
-    "url": "https://www.marktechpost.com/2026/04/07/how-to-deploy-open-webui-with-secure-openai-api-integration-public-tunneling-and-browser-based-chat-access/",
-    "source": "MarkTechPost",
-    "type": "rss",
-    "published_utc": "2026-04-08T01:31:56+00:00",
-    "summary": "<p>In this tutorial, we build a complete Open WebUI setup in Colab, in a practical, hands-on way, using Python. We begin by installing the required dependencies, then securely provide our OpenAI API key through terminal-based secret input so that sensitive credentials are not exposed directly in the notebook. From there, we configure the environment variables [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/04/07/how-to-deploy-open-webui-with-secure-openai-api-integration-pub",
-    "engagement": null,
-    "score": 25
   },
   {
     "id": "https://arxiv.org/abs/2604.04938",
