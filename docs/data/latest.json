@@ -1,0 +1,211 @@
+[
+  {
+    "id": "https://huggingface.co/blog/ibm-research/altk-evolve",
+    "title": "ALTK‑Evolve: On‑the‑Job Learning for AI Agents",
+    "url": "https://huggingface.co/blog/ibm-research/altk-evolve",
+    "source": "Hugging Face",
+    "type": "rss",
+    "published_utc": "2026-04-08T14:27:42+00:00",
+    "summary": "",
+    "engagement": null,
+    "score": 50
+  },
+  {
+    "id": "https://www.marktechpost.com/2026/04/08/z-ai-introduces-glm-5-1-an-open-weight-754b-agentic-model-that-achieves-sota-on-swe-bench-pro-and-sustains-8-hour-autonomous-execution/",
+    "title": "Z.AI Introduces GLM-5.1: An Open-Weight 754B Agentic Model That Achieves SOTA on SWE-Bench Pro and Sustains 8-Hour Autonomous Execution",
+    "url": "https://www.marktechpost.com/2026/04/08/z-ai-introduces-glm-5-1-an-open-weight-754b-agentic-model-that-achieves-sota-on-swe-bench-pro-and-sustains-8-hour-autonomous-execution/",
+    "source": "MarkTechPost",
+    "type": "rss",
+    "published_utc": "2026-04-08T08:19:10+00:00",
+    "summary": "<p>Z.AI, the AI platform developed by the team behind the GLM model family, has released GLM-5.1 — its next-generation flagship model developed specifically for agentic engineering. Unlike models optimized for clean, single-turn benchmarks, GLM-5.1 is built for agentic tasks, with significantly stronger coding capabilities than its predecessor, and achieves state-of-the-art performance on SWE-Bench Pro while [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/04/08/z-ai-introduc",
+    "engagement": null,
+    "score": 45
+  },
+  {
+    "id": "https://openai.com/index/introducing-child-safety-blueprint",
+    "title": "Introducing the Child Safety Blueprint",
+    "url": "https://openai.com/index/introducing-child-safety-blueprint",
+    "source": "OpenAI",
+    "type": "rss",
+    "published_utc": "2026-04-08T05:00:00+00:00",
+    "summary": "Discover OpenAI’s Child Safety Blueprint—a roadmap for building AI responsibly with safeguards, age-appropriate design, and collaboration to protect and empower young people online.",
+    "engagement": null,
+    "score": 40
+  },
+  {
+    "id": "https://www.technologyreview.com/2026/04/08/1135398/mustafa-suleyman-ai-future/",
+    "title": "Mustafa Suleyman: AI development won’t hit a wall anytime soon—here’s why",
+    "url": "https://www.technologyreview.com/2026/04/08/1135398/mustafa-suleyman-ai-future/",
+    "source": "MIT Tech Review",
+    "type": "rss",
+    "published_utc": "2026-04-08T14:00:00+00:00",
+    "summary": "We evolved for a linear world. If you walk for an hour, you cover a certain distance. Walk for two hours and you cover double that distance. This intuition served us well on the savannah. But it catastrophically fails when confronting AI and the core exponential trends at its heart. From the time I began&#8230;",
+    "engagement": null,
+    "score": 40
+  },
+  {
+    "id": "https://www.therundown.ai/p/anthropic-new-ai-is-too-powerful-for-the-world",
+    "title": "Anthropic's new AI is too powerful for the world",
+    "url": "https://www.therundown.ai/p/anthropic-new-ai-is-too-powerful-for-the-world",
+    "source": "The Rundown AI",
+    "type": "rss",
+    "published_utc": "2026-04-08T09:00:00+00:00",
+    "summary": "PLUS: Get to inbox zero with this Claude prompt",
+    "engagement": null,
+    "score": 38
+  },
+  {
+    "id": "https://arxiv.org/abs/2604.04937",
+    "title": "Pramana: Fine-Tuning Large Language Models for Epistemic Reasoning through Navya-Nyaya",
+    "url": "https://arxiv.org/abs/2604.04937",
+    "source": "arXiv cs.AI",
+    "type": "rss",
+    "published_utc": "2026-04-08T04:00:00+00:00",
+    "summary": "arXiv:2604.04937v1 Announce Type: new \nAbstract: Large language models produce fluent text but struggle with systematic reasoning, often hallucinating confident but unfounded claims. When Apple researchers added irrelevant context to mathematical problems, LLM performance degraded by 65% Apple Machine Learning Research, exposing brittle pattern-matching beneath apparent reasoning. This epistemic gap, the inability to ground claims in traceable evidence, limits AI reliability in domains requiring",
+    "engagement": null,
+    "score": 37
+  },
+  {
+    "id": "https://arxiv.org/abs/2604.04942",
+    "title": "TDA-RC: Task-Driven Alignment for Knowledge-Based Reasoning Chains in Large Language Models",
+    "url": "https://arxiv.org/abs/2604.04942",
+    "source": "arXiv cs.CL",
+    "type": "rss",
+    "published_utc": "2026-04-08T04:00:00+00:00",
+    "summary": "arXiv:2604.04942v1 Announce Type: new \nAbstract: Enhancing the reasoning capability of large language models (LLMs) remains a core challenge in natural language processing. The Chain-of-Thought (CoT) paradigm dominates practical applications for its single-round efficiency, yet its reasoning chains often exhibit logical gaps. While multi-round paradigms like Graph-of-Thoughts (GoT), Tree-of-Thoughts (ToT), and Atom of Thought (AoT) achieve strong performance and reveal effective reasoning struct",
+    "engagement": null,
+    "score": 37
+  },
+  {
+    "id": "https://arxiv.org/abs/2604.04940",
+    "title": "ReVEL: Multi-Turn Reflective LLM-Guided Heuristic Evolution via Structured Performance Feedback",
+    "url": "https://arxiv.org/abs/2604.04940",
+    "source": "arXiv cs.AI",
+    "type": "rss",
+    "published_utc": "2026-04-08T04:00:00+00:00",
+    "summary": "arXiv:2604.04940v1 Announce Type: new \nAbstract: Designing effective heuristics for NP-hard combinatorial optimization problems remains a challenging and expertise-intensive task. Existing applications of large language models (LLMs) primarily rely on one-shot code synthesis, yielding brittle heuristics that underutilize the models' capacity for iterative reasoning. We propose ReVEL: Multi-Turn Reflective LLM-Guided Heuristic Evolution via Structured Performance Feedback, a hybrid framework that",
+    "engagement": null,
+    "score": 32
+  },
+  {
+    "id": "https://huggingface.co/blog/safetensors-joins-pytorch-foundation",
+    "title": "Safetensors is Joining the PyTorch Foundation",
+    "url": "https://huggingface.co/blog/safetensors-joins-pytorch-foundation",
+    "source": "Hugging Face",
+    "type": "rss",
+    "published_utc": "2026-04-08T00:00:00+00:00",
+    "summary": "",
+    "engagement": null,
+    "score": 30
+  },
+  {
+    "id": "https://www.marktechpost.com/2026/04/07/how-to-combine-google-search-google-maps-and-custom-functions-in-a-single-gemini-api-call-with-context-circulation-parallel-tool-ids-and-multi-step-agentic-chains/",
+    "title": "How to Combine Google Search, Google Maps, and Custom Functions in a Single Gemini API Call With Context Circulation, Parallel Tool IDs, and Multi-Step Agentic Chains",
+    "url": "https://www.marktechpost.com/2026/04/07/how-to-combine-google-search-google-maps-and-custom-functions-in-a-single-gemini-api-call-with-context-circulation-parallel-tool-ids-and-multi-step-agentic-chains/",
+    "source": "MarkTechPost",
+    "type": "rss",
+    "published_utc": "2026-04-08T01:56:34+00:00",
+    "summary": "<p>In this tutorial, we explore the latest Gemini API tooling updates Google announced in March 2026, specifically the ability to combine built-in tools like Google Search and Google Maps with custom function calls in a single API request. We walk through five hands-on demos that progressively build on each other, starting with the core tool [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/04/07/how-to-combine-google-search-google-maps-and-custom-functions-in-a-single-gemini-",
+    "engagement": null,
+    "score": 30
+  },
+  {
+    "id": "https://tldr.tech/ai/2026-04-08",
+    "title": "Claude Mythos 🛡️, GLM-5.1 🤖, warp decode ⚡",
+    "url": "https://tldr.tech/ai/2026-04-08",
+    "source": "TLDR AI",
+    "type": "rss",
+    "published_utc": "2026-04-08T00:00:00+00:00",
+    "summary": "",
+    "engagement": null,
+    "score": 28
+  },
+  {
+    "id": "https://arxiv.org/abs/2604.04944",
+    "title": "Inclusion-of-Thoughts: Mitigating Preference Instability via Purifying the Decision Space",
+    "url": "https://arxiv.org/abs/2604.04944",
+    "source": "arXiv cs.CL",
+    "type": "rss",
+    "published_utc": "2026-04-08T04:00:00+00:00",
+    "summary": "arXiv:2604.04944v1 Announce Type: new \nAbstract: Multiple-choice questions (MCQs) are widely used to evaluate large language models (LLMs). However, LLMs remain vulnerable to the presence of plausible distractors. This often diverts attention toward irrelevant choices, resulting in unstable oscillation between correct and incorrect answers. In this paper, we propose Inclusion-of-Thoughts (IoT), a progressive self-filtering strategy that is designed to mitigate this cognitive load (i.e., instabil",
+    "engagement": null,
+    "score": 27
+  },
+  {
+    "id": "https://arxiv.org/abs/2604.05051",
+    "title": "This Treatment Works, Right? Evaluating LLM Sensitivity to Patient Question Framing in Medical QA",
+    "url": "https://arxiv.org/abs/2604.05051",
+    "source": "arXiv cs.CL",
+    "type": "rss",
+    "published_utc": "2026-04-08T04:00:00+00:00",
+    "summary": "arXiv:2604.05051v1 Announce Type: new \nAbstract: Patients are increasingly turning to large language models (LLMs) with medical questions that are complex and difficult to articulate clearly. However, LLMs are sensitive to prompt phrasings and can be influenced by the way questions are worded. Ideally, LLMs should respond consistently regardless of phrasing, particularly when grounded in the same underlying evidence. We investigate this through a systematic evaluation in a controlled retrieval-a",
+    "engagement": null,
+    "score": 27
+  },
+  {
+    "id": "https://www.marktechpost.com/2026/04/07/how-to-deploy-open-webui-with-secure-openai-api-integration-public-tunneling-and-browser-based-chat-access/",
+    "title": "How to Deploy Open WebUI with Secure OpenAI API Integration, Public Tunneling, and Browser-Based Chat Access",
+    "url": "https://www.marktechpost.com/2026/04/07/how-to-deploy-open-webui-with-secure-openai-api-integration-public-tunneling-and-browser-based-chat-access/",
+    "source": "MarkTechPost",
+    "type": "rss",
+    "published_utc": "2026-04-08T01:31:56+00:00",
+    "summary": "<p>In this tutorial, we build a complete Open WebUI setup in Colab, in a practical, hands-on way, using Python. We begin by installing the required dependencies, then securely provide our OpenAI API key through terminal-based secret input so that sensitive credentials are not exposed directly in the notebook. From there, we configure the environment variables [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2026/04/07/how-to-deploy-open-webui-with-secure-openai-api-integration-pub",
+    "engagement": null,
+    "score": 25
+  },
+  {
+    "id": "https://arxiv.org/abs/2604.04938",
+    "title": "Operational Noncommutativity in Sequential Metacognitive Judgments",
+    "url": "https://arxiv.org/abs/2604.04938",
+    "source": "arXiv cs.AI",
+    "type": "rss",
+    "published_utc": "2026-04-08T04:00:00+00:00",
+    "summary": "arXiv:2604.04938v1 Announce Type: new \nAbstract: Metacognition, understood as the monitoring and regulation of one's own cognitive processes, is inherently sequential: an agent evaluates an internal state, updates it, and may then re-evaluate under modified criteria. Order effects in cognition are well documented, yet it remains unclear whether such effects reflect classical state changes or reveal a deeper structural non-commutativity. We develop an operational framework that makes this distinc",
+    "engagement": null,
+    "score": 22
+  },
+  {
+    "id": "https://arxiv.org/abs/2604.05018",
+    "title": "PaperOrchestra: A Multi-Agent Framework for Automated AI Research Paper Writing",
+    "url": "https://arxiv.org/abs/2604.05018",
+    "source": "arXiv cs.AI",
+    "type": "rss",
+    "published_utc": "2026-04-08T04:00:00+00:00",
+    "summary": "arXiv:2604.05018v1 Announce Type: new \nAbstract: Synthesizing unstructured research materials into manuscripts is an essential yet under-explored challenge in AI-driven scientific discovery. Existing autonomous writers are rigidly coupled to specific experimental pipelines, and produce superficial literature reviews. We introduce PaperOrchestra, a multi-agent framework for automated AI research paper writing. It flexibly transforms unconstrained pre-writing materials into submission-ready LaTeX",
+    "engagement": null,
+    "score": 22
+  },
+  {
+    "id": "https://arxiv.org/abs/2604.05070",
+    "title": "Part-Level 3D Gaussian Vehicle Generation with Joint and Hinge Axis Estimation",
+    "url": "https://arxiv.org/abs/2604.05070",
+    "source": "arXiv cs.AI",
+    "type": "rss",
+    "published_utc": "2026-04-08T04:00:00+00:00",
+    "summary": "arXiv:2604.05070v1 Announce Type: new \nAbstract: Simulation is essential for autonomous driving, yet current frameworks often model vehicles as rigid assets and fail to capture part-level articulation. With perception algorithms increasingly leveraging dynamics such as wheel steering or door opening, realistic simulation requires animatable vehicle representations. Existing CAD-based pipelines are limited by library coverage and fixed templates, preventing faithful reconstruction of in-the-wild",
+    "engagement": null,
+    "score": 22
+  },
+  {
+    "id": "https://arxiv.org/abs/2604.04943",
+    "title": "The Illusion of Latent Generalization: Bi-directionality and the Reversal Curse",
+    "url": "https://arxiv.org/abs/2604.04943",
+    "source": "arXiv cs.CL",
+    "type": "rss",
+    "published_utc": "2026-04-08T04:00:00+00:00",
+    "summary": "arXiv:2604.04943v1 Announce Type: new \nAbstract: The reversal curse describes a failure of autoregressive language models to retrieve a fact in reverse order (e.g., training on ``$A > B$'' but failing on ``$B < A$''). Recent work shows that objectives with bidirectional supervision (e.g., bidirectional attention or masking-based reconstruction for decoder-only models) can mitigate the reversal curse. We extend this evaluation to include a vanilla masked language modeling (MLM) objective and comp",
+    "engagement": null,
+    "score": 22
+  },
+  {
+    "id": "https://arxiv.org/abs/2604.05030",
+    "title": "Phase-Associative Memory: Sequence Modeling in Complex Hilbert Space",
+    "url": "https://arxiv.org/abs/2604.05030",
+    "source": "arXiv cs.CL",
+    "type": "rss",
+    "published_utc": "2026-04-08T04:00:00+00:00",
+    "summary": "arXiv:2604.05030v1 Announce Type: new \nAbstract: We present Phase-Associative Memory (PAM), a recurrent sequence model in which all representations are complex-valued, associations accumulate in a matrix state $S_{t}$ $\\in$ $\\mathbb{C}^{d \\times d}$ via outer products, and retrieval operates through the conjugate inner product $K_t^* \\cdot Q_t / \\sqrt{d}$. At $\\sim$100M parameters on WikiText-103, PAM reaches validation perplexity 30.0, within $\\sim$10\\% of a matched transformer (27.1) trained u",
+    "engagement": null,
+    "score": 22
+  }
+]

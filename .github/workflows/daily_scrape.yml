@@ -1,0 +1,49 @@
+name: Daily AI News Scrape
+
+on:
+  schedule:
+    # Runs every day at 08:07 UTC (avoids :00 congestion)
+    - cron: '7 8 * * *'
+  workflow_dispatch:
+    # Allows manual trigger from GitHub Actions tab → "Run workflow"
+
+permissions:
+  contents: write  # needed to commit and push updated JSON
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run scraper
+        env:
+          # Twitter credentials — add these in repo Settings > Secrets > Actions
+          # Leave unset to run in RSS-only mode (still works great)
+          TWITTER_USERNAME: ${{ secrets.TWITTER_USERNAME }}
+          TWITTER_EMAIL:    ${{ secrets.TWITTER_EMAIL }}
+          TWITTER_PASSWORD: ${{ secrets.TWITTER_PASSWORD }}
+          # Optional Telegram delivery
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: python scraper.py
+
+      - name: Commit and push updated data
+        run: |
+          git config user.name  "AI Signal Bot"
+          git config user.email "actions@github.com"
+          git add docs/data/latest.json output/ 2>/dev/null || true
+          # Only commit if there are actual changes
+          git diff --staged --quiet || git commit -m "chore: daily AI news digest $(date -u '+%Y-%m-%d')"
+          git push

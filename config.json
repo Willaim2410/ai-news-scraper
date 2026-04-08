@@ -1,0 +1,31 @@
+{
+  "twitter_queries": [
+    "OpenAI lang:en -is:retweet min_faves:20",
+    "ChatGPT new lang:en -is:retweet min_faves:30",
+    "LLM release lang:en -is:retweet min_faves:25",
+    "Gemini AI lang:en -is:retweet min_faves:25",
+    "Anthropic Claude lang:en -is:retweet min_faves:20",
+    "AI model release lang:en -is:retweet min_faves:40",
+    "artificial intelligence breakthrough lang:en -is:retweet min_faves:50"
+  ],
+  "twitter_max_per_query": 20,
+  "lookback_hours": 25,
+  "rss_feeds": [
+    {"name": "OpenAI",          "url": "https://openai.com/news/rss.xml"},
+    {"name": "Hugging Face",    "url": "https://huggingface.co/blog/feed.xml"},
+    {"name": "Google AI",       "url": "https://blog.google/technology/ai/rss/"},
+    {"name": "arXiv cs.AI",     "url": "https://rss.arxiv.org/rss/cs.AI"},
+    {"name": "arXiv cs.CL",     "url": "https://rss.arxiv.org/rss/cs.cl"},
+    {"name": "MIT Tech Review",  "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed/"},
+    {"name": "MarkTechPost",    "url": "https://www.marktechpost.com/feed/"},
+    {"name": "TLDR AI",         "url": "https://tldr.tech/api/rss/ai"},
+    {"name": "Ben's Bites",     "url": "https://bensbites.beehiiv.com/feed.xml"},
+    {"name": "The Rundown AI",  "url": "https://rss.beehiiv.com/feeds/2R3C6Bt5wj.xml"}
+  ],
+  "arxiv_max_items": 5,
+  "output_dir": "output",
+  "data_dir": "data",
+  "telegram_enabled": false,
+  "telegram_chat_id": "",
+  "telegram_bot_token_env": "TELEGRAM_BOT_TOKEN"
+}

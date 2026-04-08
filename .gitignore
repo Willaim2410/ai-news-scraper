@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.pyo
+
+# Twitter session — contains credentials, never commit
+data/twitter_cookies.json
+data/twitter_creds.json
+data/seen_hashes.json
+
+# Logs
+output/scraper.log
+
+# Local env
+.env

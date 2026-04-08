@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Signal — Daily Intelligence Feed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:        #0a0a0b;
+    --bg2:       #111113;
+    --bg3:       #18181c;
+    --border:    #252529;
+    --text:      #e8e8e4;
+    --muted:     #6b6b72;
+    --accent:    #e8ff47;
+    --accent-dim:#a8b82e;
+    --red:       #ff4757;
+    --blue:      #3d9eff;
+    --green:     #3ddc84;
+    --orange:    #ff8c42;
+    --pink:      #e040fb;
+    --teal:      #26c6da;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Syne', sans-serif;
+    --radius: 4px;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.012) 2px, rgba(255,255,255,0.012) 4px);
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* Header */
+  header {
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(180deg, #0d0d10 0%, var(--bg) 100%);
+    padding: 28px 24px 20px;
+    position: sticky; top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+  }
+  .header-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: flex-end; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap;
+  }
+  .logo-group { display: flex; flex-direction: column; gap: 2px; }
+  .logo {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); opacity: 0.9;
+  }
+  h1 { font-size: clamp(22px, 4vw, 32px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+  h1 span { color: var(--accent); }
+  .meta-bar {
+    font-family: var(--mono); font-size: 11px; color: var(--muted);
+    display: flex; align-items: center; gap: 12px;
+  }
+  #last-updated { color: var(--accent-dim); font-weight: 500; }
+
+  /* Controls */
+  .controls {
+    max-width: 1200px; margin: 0 auto; padding: 16px 24px;
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    border-bottom: 1px solid var(--border);
+  }
+  .filter-group, .sort-group {
+    display: flex; gap: 2px;
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 6px; padding: 3px;
+  }
+  button {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    background: transparent; border: none; color: var(--muted);
+    padding: 6px 14px; border-radius: 4px; cursor: pointer;
+    transition: all 0.15s ease; white-space: nowrap;
+  }
+  button:hover { color: var(--text); background: rgba(255,255,255,0.04); }
+  button.active { background: var(--accent); color: #0a0a0b; font-weight: 700; }
+  .divider { width: 1px; height: 20px; background: var(--border); flex-shrink: 0; }
+
+  /* Grid */
+  main { max-width: 1200px; margin: 0 auto; padding: 0 24px 80px; }
+  #grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1px; margin-top: 1px;
+  }
+
+  /* Card */
+  .card {
+    background: var(--bg2);
+    border: 1px solid var(--border); border-top: none;
+    border-left: 3px solid var(--card-accent, var(--border));
+    padding: 18px 18px 14px;
+    display: flex; flex-direction: column; gap: 10px;
+    opacity: 0; transform: translateY(8px);
+    animation: cardIn 0.35s ease forwards;
+    transition: background 0.15s ease;
+    position: relative; overflow: hidden;
+  }
+  .card::after {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, var(--card-accent, transparent), transparent 60%);
+    opacity: 0.6;
+  }
+  .card:hover { background: #13131a; }
+  @keyframes cardIn { to { opacity: 1; transform: translateY(0); } }
+
+  .card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+  .card-title { font-size: 14px; font-weight: 600; line-height: 1.4; letter-spacing: -0.01em; flex: 1; }
+  .card-title a { color: var(--text); text-decoration: none; transition: color 0.12s ease; }
+  .card-title a:hover { color: var(--accent); }
+  .score-badge {
+    font-family: var(--mono); font-size: 18px; font-weight: 700;
+    color: var(--accent); line-height: 1; flex-shrink: 0;
+    letter-spacing: -0.04em; opacity: 0.9; min-width: 32px; text-align: right;
+  }
+  .score-bar { height: 2px; background: var(--bg3); border-radius: 2px; overflow: hidden; margin: -4px 0 2px; }
+  .score-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-dim), var(--accent));
+    border-radius: 2px; transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .card-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .source-badge {
+    font-family: var(--mono); font-size: 10px; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 2px 7px; border-radius: 3px;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+    color: var(--badge-color, var(--muted));
+  }
+  .type-pill {
+    font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 2px 6px; border-radius: 2px;
+    color: var(--muted); background: var(--bg3);
+  }
+  .time-ago { font-family: var(--mono); font-size: 10px; color: var(--muted); margin-left: auto; }
+
+  .summary {
+    font-size: 13px; color: #9d9d9f; line-height: 1.55;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .engagement {
+    font-family: var(--mono); font-size: 11px; color: var(--muted);
+    display: flex; gap: 14px; padding-top: 4px; border-top: 1px solid var(--border);
+  }
+  .engagement span { display: flex; align-items: center; gap: 4px; }
+  .engagement .likes  { color: #ff6b7a; }
+  .engagement .rts    { color: var(--blue); }
+  .engagement .replies{ color: var(--teal); }
+
+  /* States */
+  #state-overlay {
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; gap: 16px; padding: 80px 24px; text-align: center;
+  }
+  .state-icon { font-family: var(--mono); font-size: 32px; color: var(--accent); animation: pulse 1.8s ease-in-out infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+  .state-title { font-family: var(--mono); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; }
+  .state-sub { font-size: 12px; color: var(--muted); max-width: 360px; font-family: var(--mono); }
+  .error-box { border: 1px solid var(--red); background: rgba(255,71,87,0.06); border-radius: var(--radius); padding: 20px 28px; }
+  .error-box .state-icon { color: var(--red); animation: none; }
+  .error-box .state-title { color: var(--red); }
+  .error-box .state-sub { color: #c08080; }
+
+  .empty { grid-column: 1 / -1; text-align: center; padding: 60px 24px; font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: 0.08em; }
+
+  @media (max-width: 640px) {
+    header { padding: 18px 16px 14px; }
+    .controls { padding: 12px 16px; }
+    main { padding: 0 0 60px; }
+    #grid { grid-template-columns: 1fr; }
+    .card { padding: 14px 14px 12px; }
+    h1 { font-size: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-group">
+      <div class="logo">▸ AI SIGNAL</div>
+      <h1>Daily <span>Intelligence</span> Feed</h1>
+    </div>
+    <div class="meta-bar">
+      <span id="last-updated">—</span>
+      <span class="divider" style="height:12px;"></span>
+      <span id="item-count">loading…</span>
+    </div>
+  </div>
+</header>
+
+<div class="controls">
+  <div class="filter-group" role="group" aria-label="Filter by type">
+    <button class="active" data-filter="all">All</button>
+    <button data-filter="rss">RSS</button>
+    <button data-filter="tweet">Twitter</button>
+  </div>
+  <div class="divider"></div>
+  <div class="sort-group" role="group" aria-label="Sort by">
+    <button class="active" data-sort="score">Score</button>
+    <button data-sort="time">Time</button>
+  </div>
+</div>
+
+<main>
+  <div id="state-overlay">
+    <div class="state-icon">◈</div>
+    <div class="state-title">Fetching signal…</div>
+    <div class="state-sub">Loading data/latest.json</div>
+  </div>
+  <div id="grid" hidden></div>
+</main>
+
+<script>
+(() => {
+  const SOURCE_COLORS = {
+    'OpenAI':          '#3ddc84',
+    'Hugging Face':    '#ff8c42',
+    'Google AI':       '#3d9eff',
+    'arXiv cs.AI':     '#ff4757',
+    'arXiv cs.CL':     '#ff6b81',
+    'MIT Tech Review': '#e040fb',
+    'TLDR AI':         '#26c6da',
+    "Ben's Bites":     '#ffd166',
+    'The Rundown AI':  '#a29bfe',
+    'MarkTechPost':    '#fd79a8',
+  };
+
+  function getColor(source, type) {
+    if (type === 'tweet') return '#3d9eff';
+    return SOURCE_COLORS[source] || '#6b6b72';
+  }
+
+  function timeAgo(isoStr) {
+    if (!isoStr) return '—';
+    const diff = Date.now() - new Date(isoStr).getTime();
+    const m = Math.floor(diff / 60000);
+    if (m < 60) return `${m}m ago`;
+    const h = Math.floor(m / 60);
+    if (h < 24) return `${h}h ago`;
+    return `${Math.floor(h / 24)}d ago`;
+  }
+
+  function fmtNum(n) {
+    if (n == null || n === 0) return null;
+    return n >= 1000 ? (n / 1000).toFixed(1) + 'k' : String(n);
+  }
+
+  function buildCard(item, idx) {
+    const color = getColor(item.source, item.type);
+    const eng = item.engagement;
+    const summary = (item.summary || '').replace(/<[^>]*>/g, '').trim();
+
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.style.setProperty('--card-accent', color);
+    card.style.animationDelay = `${Math.min(idx * 35, 600)}ms`;
+
+    const likesStr   = eng && fmtNum(eng.likes);
+    const rtsStr     = eng && fmtNum(eng.retweets);
+    const repliesStr = eng && fmtNum(eng.replies);
+    const engHTML = (item.type === 'tweet' && eng && (likesStr || rtsStr))
+      ? `<div class="engagement">
+           ${likesStr   ? `<span class="likes">&#9829; ${likesStr}</span>` : ''}
+           ${rtsStr     ? `<span class="rts">&#8634; ${rtsStr}</span>` : ''}
+           ${repliesStr ? `<span class="replies">&#10022; ${repliesStr}</span>` : ''}
+         </div>` : '';
+
+    card.innerHTML = `
+      <div class="card-header">
+        <div class="card-title">
+          <a href="${item.url}" target="_blank" rel="noopener noreferrer">${item.title}</a>
+        </div>
+        <div class="score-badge">${item.score}</div>
+      </div>
+      <div class="score-bar">
+        <div class="score-fill" style="width:${item.score}%"></div>
+      </div>
+      <div class="card-meta">
+        <span class="source-badge" style="--badge-color:${color}">${item.source}</span>
+        <span class="type-pill">${item.type}</span>
+        <span class="time-ago">${timeAgo(item.published_utc)}</span>
+      </div>
+      ${summary ? `<p class="summary">${summary}</p>` : ''}
+      ${engHTML}
+    `;
+    return card;
+  }
+
+  const overlay = document.getElementById('state-overlay');
+  const grid    = document.getElementById('grid');
+
+  function showLoading() {
+    overlay.hidden = false; grid.hidden = true;
+    overlay.innerHTML = `<div class="state-icon">&#9672;</div><div class="state-title">Fetching signal&hellip;</div><div class="state-sub">Loading data/latest.json</div>`;
+  }
+
+  function showError(msg) {
+    overlay.hidden = false; grid.hidden = true;
+    overlay.innerHTML = `<div class="error-box"><div class="state-icon">&#10005;</div><div class="state-title">Feed unavailable</div><div class="state-sub">${msg}</div></div>`;
+  }
+
+  let allItems = [];
+  let activeFilter = 'all';
+  let activeSort   = 'score';
+
+  function render() {
+    let items = activeFilter === 'all' ? allItems : allItems.filter(i => i.type === activeFilter);
+    items = [...items].sort((a, b) =>
+      activeSort === 'score'
+        ? b.score - a.score
+        : new Date(b.published_utc) - new Date(a.published_utc)
+    );
+
+    grid.innerHTML = '';
+    if (items.length === 0) {
+      grid.innerHTML = '<div class="empty">NO ITEMS MATCH THIS FILTER</div>';
+    } else {
+      items.forEach((item, i) => grid.appendChild(buildCard(item, i)));
+    }
+
+    document.getElementById('item-count').textContent = `${items.length} item${items.length !== 1 ? 's' : ''}`;
+    overlay.hidden = true;
+    grid.hidden = false;
+  }
+
+  function updateTimestamp(items) {
+    const dates = items.map(i => i.published_utc ? new Date(i.published_utc).getTime() : 0).filter(Boolean);
+    if (!dates.length) return;
+    document.getElementById('last-updated').textContent = `Updated ${timeAgo(new Date(Math.max(...dates)).toISOString())}`;
+  }
+
+  document.querySelectorAll('[data-filter]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-filter]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFilter = btn.dataset.filter;
+      render();
+    });
+  });
+
+  document.querySelectorAll('[data-sort]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-sort]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeSort = btn.dataset.sort;
+      render();
+    });
+  });
+
+  showLoading();
+  fetch('data/latest.json')
+    .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
+    .then(data => {
+      if (!Array.isArray(data) || !data.length) { showError('Feed is empty. Run the scraper first.'); return; }
+      allItems = data;
+      updateTimestamp(data);
+      render();
+    })
+    .catch(err => showError(`Could not load latest.json &mdash; ${err.message}`));
+})();
+</script>
+</body>
+</html>
